@@ -5,6 +5,7 @@
 
 class Presentation : public PandocWriter {
   void RewriteMakefile() const;
+  void GenerateScript() const;
 
   void HeaderSection(std::ostream &)  const;
   void PackageSection(std::ostream &) const;

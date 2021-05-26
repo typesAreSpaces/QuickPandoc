@@ -11,6 +11,7 @@ Presentation::Presentation(std::string const & project_name,
     ) : PandocWriter(project_name, author_name, title) 
 {
   RewriteMakefile();
+  GenerateScript();
   std::ofstream out((project_name + "/main.md").c_str());
   HeaderSection(out);
   MainSection(out);
@@ -40,6 +41,47 @@ void Presentation::RewriteMakefile() const {
     "\t@while true; do inotifywait $(SRC); sleep 0.01; make $(MAIN_OUTPUT); done\n"
     << std::endl;
   return;
+}
+
+void Presentation::GenerateScript() const {
+  system(("mkdir -p " + project_name + "/scripts").c_str());
+  std::ofstream out((project_name + "/scripts/includes.hs").c_str());
+  out << 
+    "#!/usr/bin/env runhaskell\n"
+    "\n"
+    "import Text.Pandoc\n"
+    "import qualified Text.Pandoc.JSON as TPJ\n"
+    "import qualified Data.Text.IO as TIO\n"
+    "import qualified Data.Text as T\n"
+    "\n"
+    "main :: IO ()\n"
+    "main = TPJ.toJSONFilter doInclude\n"
+    "\n"
+    "doInclude :: [TPJ.Block] -> IO [TPJ.Block]\n"
+    "doInclude (x : xs) =\n"
+    "  do\n"
+    "    extraction <- extractFromInclude x\n"
+    "    fmap (extraction ++) $ doInclude xs\n"
+    "doInclude [] = return []\n"
+    "\n"
+    "extractFromInclude :: TPJ.Block -> IO [TPJ.Block]\n"
+    "extractFromInclude cb@(TPJ.CodeBlock (id, classes, namevals) contents) =\n"
+    "  case lookup (T.pack \"include\") namevals of\n"
+    "    Just f ->\n"
+    "      do\n"
+    "        content <- TIO.readFile (T.unpack f)\n"
+    "        result <- runIO $ do\n"
+    "          readMarkdown def content\n"
+    "        includeTmp <- handleError result\n"
+    "        extractBlocks includeTmp\n"
+    "    Nothing -> return [cb]\n"
+    "extractFromInclude x = return [x]\n"
+    "\n"
+    "extractBlocks :: Pandoc -> IO [TPJ.Block]\n"
+    "extractBlocks (Pandoc a x) = return x\n"
+    << std::endl;
+  system(("chmod +x "+ project_name + "/scripts/includes.hs").c_str());
+
 }
 
 void Presentation::HeaderSection(std::ostream & out) const {
