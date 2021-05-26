@@ -1,0 +1,182 @@
+[
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickTex",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/Basic.o",
+   "src/Basic.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/Basic.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickTex",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/Homework.o",
+   "src/Homework.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/Homework.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickTex",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/main.o",
+   "src/main.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickTex",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/Presentation.o",
+   "src/Presentation.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/Presentation.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickTex",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/TechnicalReport.o",
+   "src/TechnicalReport.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/TechnicalReport.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickTex",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/TexWriter.o",
+   "src/TexWriter.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/TexWriter.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickPandoc",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/Basic.o",
+   "src/Basic.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/Basic.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickPandoc",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/Homework.o",
+   "src/Homework.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/Homework.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickPandoc",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/main.o",
+   "src/main.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickPandoc",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/PandocWriter.o",
+   "src/PandocWriter.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/PandocWriter.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickPandoc",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/Presentation.o",
+   "src/Presentation.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/Presentation.cpp"
+ },
+ {
+  "directory": "/home/jose/Documents/GithubProjects/QuickPandoc",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-o",
+   "obj/TechnicalReport.o",
+   "src/TechnicalReport.cpp",
+   "-Iinclude",
+   "-std=c++11",
+   "-Wall"
+  ],
+  "file": "src/TechnicalReport.cpp"
+ }
+]
