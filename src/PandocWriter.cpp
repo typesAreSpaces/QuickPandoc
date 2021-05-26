@@ -73,7 +73,7 @@ void PandocWriter::BasicMakefile() const {
     "%.tex: %.md\n"
     "\tif [ ! $< == main.md ]; then pandoc $< -o $@; fi\n"
 
-    "$(MAIN_OUTPUT): $(TEX_FILES) $(SRC)\n"
+    "$(MAIN_OUTPUT): $(TEX_FILES) $(MAIN_MD)\n"
     "\tpandoc $(MAIN_MD) -s -o $(MAIN_TEX)\n"
     "\trubber --pdf $(MAIN_TEX)\n"
     ".PHONY: clean\n"
