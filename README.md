@@ -1,7 +1,7 @@
 # QuickPandoc
 
 This tool automatically generates a minimal 
-setup to quickly start working on a TeX project.
+setup to quickly start working on a Pandoc project.
 
 ## Requirements
 
