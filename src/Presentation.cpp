@@ -61,7 +61,7 @@ void Presentation::GenerateScript() const {
     "doInclude (x : xs) =\n"
     "  do\n"
     "    extraction <- extractFromInclude x\n"
-    "    fmap (extraction ++) $ doInclude xs\n"
+    "    (extraction ++) <$> doInclude xs\n"
     "doInclude [] = return []\n"
     "\n"
     "extractFromInclude :: TPJ.Block -> IO [TPJ.Block]\n"
